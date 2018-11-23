@@ -25,12 +25,14 @@
           </th>
         </tr>
       </thead>
+      
       <tbody>
-        <tr ng-repeat="row in tableRows | filter:keyword">
-          <td ng-repeat="header in tableHeaders track by $index">
-            {{ row[header] }}
-          </td>
-        </tr>
+	<tr ng-repeat="row in tableRows | filter:keyword">   
+	  <td ng-show="header=='pid'" ng-repeat="header in tableHeaders track by $index"> 
+	    <a href="\" id="ppid" ng-click="toggleWindow(row[header],row['cmd'])">{{ row[header] }}</a>    
+	  </td>   
+	  <td ng-show="header!='pid'" ng-repeat="header in tableHeaders track by $index">{{ row[header] }}</td>       
+	</tr>      
       </tbody>
     </table>
 

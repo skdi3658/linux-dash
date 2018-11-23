@@ -48,6 +48,10 @@ angular.module('linuxDash').directive('tableData', ['server', '$rootScope', func
         })
       }
 
+      scope.toggleWindow = function(pid,cmd) {
+        var open_win = window.open("graph.html?pid="+pid,"graph","width=750,height=600,left=100,top=50");
+      }
+
       scope.getData = function() {
         delete scope.tableRows
 
