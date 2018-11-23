@@ -35,6 +35,10 @@ arp_cache() {
   fi
 }
 
+memory_map(){
+ cat /proc/$1/maps
+}
+
 bandwidth() {
 
   $CAT /proc/net/dev \
